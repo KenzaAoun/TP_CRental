@@ -9,5 +9,5 @@ public class TpCarRentalApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TpCarRentalApplication.class, args);
 	}
-System.out.println("NRUH");
+
 }
