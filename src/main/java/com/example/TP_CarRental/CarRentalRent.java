@@ -1,4 +1,4 @@
-package com.example.TP_CRental;
+package com.example.TP_CarRental;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +38,6 @@ public class CarRentalRent {
             System.out.println("TEST" + rents.get(0));
             Rent loc = rents.get(0);
             return loc;
-
         }
 
 }

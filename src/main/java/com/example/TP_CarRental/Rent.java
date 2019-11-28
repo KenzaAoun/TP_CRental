@@ -1,4 +1,4 @@
-package com.example.TP_CRental;
+package com.example.TP_CarRental;
 
 import java.util.Date;
 

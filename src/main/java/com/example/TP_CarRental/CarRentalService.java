@@ -1,6 +1,6 @@
-package com.example.TP_CRental;
+package com.example.TP_CarRental;
 
-import com.example.TP_CRental.Car;
+import com.example.TP_CarRental.Car;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
