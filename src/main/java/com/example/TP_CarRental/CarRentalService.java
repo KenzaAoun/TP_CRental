@@ -1,12 +1,11 @@
-package com.example.TP_CarRental;
+package com.example.TP_CRental;
+
+import com.example.TP_CRental.Car;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.web.bind.annotation.*;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 
 @RestController
 public class CarRentalService {
@@ -14,8 +13,8 @@ public class CarRentalService {
     private List<Car> cars = new ArrayList<Car>();
 
     public CarRentalService() {
-        cars.add(new Car("11AA22", "Ferrari", 1000));
-        cars.add(new Car("33BB44", "Porshe", 2222));
+        cars.add(new Car("11AA22", "Ferrari", 1000, true));
+        cars.add(new Car("33BB44", "Porshe", 2222, false));
     }
 
     @RequestMapping(value="/cars", method=RequestMethod.GET)
