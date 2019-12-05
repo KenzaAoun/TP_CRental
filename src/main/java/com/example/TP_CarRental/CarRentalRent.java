@@ -1,4 +1,5 @@
 package com.example.TP_CarRental;
+/** Display a rented car with the beginning & ending dates of renting **/
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,18 +14,19 @@ import java.util.Date;
 import java.util.List;
 
 public class CarRentalRent {
+        //Initializing a list which hold the information concerning the rented dates of a car
+        private List<Rent> rentedCar = new ArrayList<>();
 
-        private List<Rent> rents = new ArrayList<>();
-
-        /* TEST */
+    /*Display the renting dates of a specific car, following its plate Number*/
         public CarRentalRent()  {
             try {
+                //Setting the date format
                 SimpleDateFormat date = new SimpleDateFormat("dd/mm/yyyy");
+                //Setting dates for testing
+                Date beginDate = date.parse("25/10/2019");
+                Date endDate = date.parse ("15/11/2019");
 
-                Date dateBegin = date.parse("16/02/2004");
-                Date dateEnd = date.parse ("17/03/2005");
-
-                rents.add (new Rent("11AA22", dateEnd, dateBegin));
+                rentedCar.add (new Rent("11AA22", endDate, beginDate, true));
 
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -32,12 +34,14 @@ public class CarRentalRent {
 
         }
 
-        @RequestMapping(value="/rents", method= RequestMethod.GET)
+        /*Display on local host the parameters of a rented car*/
+        /**Doesn't work**/
+        @RequestMapping(value="/rentedCar", method= RequestMethod.GET)
         @ResponseStatus(HttpStatus.OK)
-        public Rent getRents(){
-            System.out.println("TEST" + rents.get(0));
-            Rent loc = rents.get(0);
-            return loc;
+        public Rent getrentedCar(){
+            System.out.println("RENTED CARS" + rentedCar.get(0));
+            Rent leased = rentedCar.get(0);
+            return leased;
         }
 
 }
